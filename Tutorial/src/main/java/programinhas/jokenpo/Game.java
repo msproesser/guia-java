@@ -2,7 +2,7 @@ package programinhas.jokenpo;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import static programinhas.jokenpo.MatchupResult.*;
 public class Game {
 
     private final Player challenger;
@@ -21,8 +21,8 @@ public class Game {
 
         var gesture = challenger.getGesture();
         if (gesture == null) {
-            matchHistory.add(MatchupResult.LOSE);
-            return MatchupResult.LOSE;
+            matchHistory.add(LOSE);
+            return LOSE;
         }
         var result = gesture.against(opponent.getGesture());
         matchHistory.add(result);

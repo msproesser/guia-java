@@ -3,7 +3,7 @@ package programinhas.jokenpo;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
+import static programinhas.jokenpo.MatchupResult.*;
 public class GameSummary {
 
     private final Player challenger;
@@ -18,7 +18,7 @@ public class GameSummary {
         this.opponent = opponent;
         this.rounds = rounds;
         score = results.stream().collect(Collectors.groupingBy(result -> result, Collectors.summingInt(result -> 1)));
-        this.isChallengerWin = score.getOrDefault(MatchupResult.WIN, 0) > score.getOrDefault(MatchupResult.LOSE, 0);
+        this.isChallengerWin = score.getOrDefault(WIN, 0) > score.getOrDefault(LOSE, 0);
     }
 
     public Player getWinner() {
