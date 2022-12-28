@@ -3,7 +3,7 @@ import static programinhas.jokenpo.MatchupResult.*;
 public class Inicio {
 
     public static void main(String[] args) {
-        var game = new Game(new IAPlayer("challenger"), new IAPlayer("opponent"), 5);
+        var game = new Game(new ShellPlayer("challenger"), new IAPlayer("opponent"), 5);
         while(!game.isFinished()) {
             var roundResult = game.newRound();
             System.out.println("Round result is: " + roundResult.name());

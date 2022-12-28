@@ -25,7 +25,7 @@ public class ShellPlayer implements Player {
             System.out.println(i + ": " + options[i].name());
         }
         var selected = reader.nextInt();
-        if (selected > options.length) return null;
+        if (selected >= options.length) return null;
         return options[selected];
     }
 }
